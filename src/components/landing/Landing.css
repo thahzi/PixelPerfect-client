@@ -1,0 +1,34 @@
+.landingHero{
+    background-image: url('../../assets/hero.jpg');
+    filter: brightness(.8);
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    position: relative;
+}
+.landingTitle{
+    position: absolute;
+    top: 50%;
+    left: 10%; 
+    line-height: 4rem;
+    
+}
+.landingTitle h1{
+    line-height: 4rem;
+    font-size: 6rem;
+}
+.landingTitle span{
+    color: #3384A5;
+}
+@media (max-width:700px){
+    .landingTitle h1{
+        font-size: 30px;
+        line-height: 2rem;
+    }
+    .landingTitle{
+        text-align: center;
+        top:30%;
+        left: 0;
+    }
+}
