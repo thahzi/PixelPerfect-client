@@ -1,13 +1,16 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
 
-function Card(props){
-    return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={props.img} />
-        </Card>
+
+function Card({imageUrl, altText, children}) {
+  return (
+    <>
+    <div className="card rounded shadow" style={{height:'auto'}}>
+      <img src={imageUrl} alt={altText} className='rounded' />
+      {children}
+    </div>
         
-    
-    );
+    </>
+  )
 }
 
+export default Card
