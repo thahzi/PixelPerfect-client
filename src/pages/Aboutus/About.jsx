@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Card from '../../components/Card/Card'
 import './About.css'
-import { faHourglass1 } from '@fortawesome/free-solid-svg-icons'
 
 function About() {
 

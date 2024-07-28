@@ -1,11 +1,13 @@
 import React from 'react'
 
 
-function Card({imageUrl, altText, children}) {
+function Card({imageUrl, text,title, children}) {
   return (
     <>
     <div className="card rounded shadow" style={{height:'auto'}}>
-      <img src={imageUrl} alt={altText} className='rounded' />
+      <img src={imageUrl} className='rounded' />
+      {title}
+      {text}
       {children}
     </div>
         
