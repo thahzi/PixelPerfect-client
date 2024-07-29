@@ -16,7 +16,7 @@ function Home() {
       
       <Landing/>
       <div ><Silder/></div>
-      <div ><About/></div>
+      <div id='boutus' ><About/></div>
       <div><Testimonials/></div>
 
 

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function Header() {
+function Header({btnShow,icon}) {
 
   return (
     <>
@@ -16,15 +16,18 @@ function Header() {
       <div className="logo">
         <h3 className=''>PixelPerfect</h3>
       </div>
-      <div className="midile d-flex gap-5">
+      {btnShow&&<div className="midile d-flex gap-5">
         <h6><Link to={'./'}>Home</Link></h6>
         <h6>About Us</h6>
         <h6><Link to={'./gallery'}>Gallery</Link></h6>
         <h6>Contacts</h6>
-      </div>
-      <div className="nav-btn d-flex gap-2 align-items-center">
-        <button className='btn btn-info rounded-4'><Link to={'/register'}>Sign Up</Link></button>
-        <button className='btn btn-info rounded-4'><Link to={'/login'}>Login</Link></button>
+      </div>}
+
+       <div className="nav-btn d-flex gap-2 align-items-center">
+
+        { btnShow && <button  className='btn btn-info rounded-4'><Link to={'/login'}>Get Started</Link></button>}
+        { icon&&<Link to={'./dashboard'}><button className='rounded-5 border-0 shadow me-5' style={{width:"50px",height:"50px",backgroundColor:"red"}}>  </button></Link>}
+        
         <div ><FontAwesomeIcon icon={faBars} /></div>
       </div>
     

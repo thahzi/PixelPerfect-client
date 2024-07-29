@@ -1,11 +1,12 @@
 import React from 'react'
 import './Landing.css'
+import Header from '../header/Header'
 
 
 function Landing() {
   return (
     <>
-    
+    <Header btnShow= {true} />
         <div className="landingHero"></div>
             <div className="container  landingTitle ">
                 <h5 className='text-light'>PIXELPERFECT</h5>
