@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Card from '../../components/Card/Card'
 import './About.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 function About() {
+
+    useEffect(()=>{
+        Aos.init()
+    },[])
+
 
     const card ={
         fontSize:'50px'
@@ -17,7 +24,7 @@ function About() {
         <div className=" mt-5 shadow p-5" style={{backgroundColor:"#3384A5",color:"white"}}>
             <div className='container my-5'>
                 {/* Row one */}
-                <Row className=''>
+                <Row className='' data-aos="fade-up">
                     <Col md={1} sm={12}></Col>
                     <Col md={4} sm={12} ><Card imageUrl="https://img.freepik.com/free-photo/account-verification-with-password-3d-padlock_107791-16181.jpg?t=st=1722066136~exp=1722069736~hmac=9459049731ba63a1c18da760c83b78340407c712b24cf558924aee7c0a95b118&w=1060" /></Col>
                     <Col md={1} sm={12}></Col>
@@ -31,7 +38,7 @@ function About() {
                 </Row>   
 
                     {/* Row two */}
-                <Row className='mt-5'>
+                <Row className='mt-5' data-aos="fade-up" >
 
                     <Col md={1} sm={12}></Col>
                     <Col md={4} sm={12} className='d-flex flex-column justify-content-center align-items-center p-2 '>
@@ -45,7 +52,7 @@ function About() {
                     <Col md={1} sm={12}></Col>
                 </Row>  
                     {/* Row three */}
-                 <Row className='mt-5'>
+                 <Row className='mt-5' data-aos="fade-up" >
                     <Col md={1} sm={12}></Col>
                     <Col md={4} sm={12} ><Card imageUrl="https://img.freepik.com/free-photo/close-up-finger-pressing-virtual-button_1112-493.jpg?t=st=1722085657~exp=1722089257~hmac=d117962126baa64369b6f0bf88e2b00ec82b582a5f56f0e1f35ef143e95ccf93&w=1380"/></Col>
                     <Col md={1} sm={12}></Col>
@@ -58,7 +65,7 @@ function About() {
                     <Col md={1} sm={12}></Col>
                 </Row>    
                     {/* Row four */}
-                <Row className='mt-5'>
+                <Row className='mt-5' data-aos="fade-up">
 
                     <Col md={1} sm={12}></Col>
                     <Col md={4} sm={12} className='d-flex flex-column justify-content-center align-items-center p-2 '>

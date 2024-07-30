@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Testimonials.css";
 import { Card, Col, Row } from "react-bootstrap";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 
 function Testimonials() {
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
     <>
-      <div className="container mt-5 p-5 shadow testBorder ">
+      <div className="container mt-5 p-5 shadow testBorder " data-aos="fade-down">
         
           <Row className=" justify-content-between align-items-center d-flex " style={{cursor:'pointerx'}}>
             <Col sm={12} md={4}>
-              <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" >
+              <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" data-aos="fade-right" >
                 <Card.Img
                   className="shadow "
                   variant="top"
@@ -32,7 +40,7 @@ function Testimonials() {
 
 
             <Col sm={12} md={4}>
-               <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" >
+               <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" data-aos="fade-up" >
                 <Card.Img
                   className="shadow "
                   variant="top"
@@ -54,7 +62,7 @@ function Testimonials() {
 
 
             <Col sm={12} md={4}>
-            <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" >
+            <Card style={{ width: "100%", border: "none" }} className="justify-content-between align-items-center d-flex" data-aos="fade-left" >
                 <Card.Img
                   className="shadow "
                   variant="top"
