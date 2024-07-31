@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHourglass1, faHouse, faImage, faPhone,faUpload } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import Card from '../../components/Card/Card'
+import './Dashboard.css'
 
 
 
@@ -28,14 +29,43 @@ function Dashboard() {
 
           <Col className='border rounded-2 border-info shadow p-5 justify-content-center align-items-center d-flex' md={3}>
 
-            <div className='justify-content-center align-items-center d-flex flex-column ' style={{cursor:"pointer"}}>
-              <Link style={style} className='text-light' to={'/'}><p><FontAwesomeIcon icon={faHouse} style={{color: "#ffffff",}} className='px-2'/> Home</p></Link>
+            <div className='justify-content-center align-items-center d-flex flex-column' style={{cursor:"pointer"}}>
 
-              <Link style={style} className='text-light' to={'/gallery'}><p><FontAwesomeIcon icon={faImage} style={{color: "#ffffff",}} className='px-2' />Gallery</p></Link>
+              <Link to={'/'} className='mt-5'>
+                <div className="wrapper">
+                  <div className="button">
+                    <div className="icon text-light"><FontAwesomeIcon icon={faHouse} /></div>
+                    <span className='ps-4 text-light'>Home</span>
+                  </div>
+                </div>
+              </Link>
 
-              <p><FontAwesomeIcon icon={faPhone} style={{color: "#ffffff",}} className='px-2' />Contacts</p>
+              <Link to={'/gallery'} className='mt-5'>
+                <div className="wrapper">
+                  <div className="button">
+                    <div className="icon text-light"><FontAwesomeIcon icon={faImage} /></div>
+                    <span className='ps-4 text-light'>Gallery</span>
+                  </div>
+                </div>
+              </Link>
 
-              <Link style={style} className='text-light' to={'/'}><p>Logout</p></Link>
+              <Link to={'/'} className='mt-5'>
+                <div className="wrapper">
+                  <div className="button">
+                    <div className="icon text-light"><FontAwesomeIcon icon={faPhone} /></div>
+                    <span className='ps-4 text-light'>Home</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* <Link to={'/'}>
+                <div className="wrapper">
+                  <div className="button">
+                    <div className="icon text-light"><FontAwesomeIcon icon={faHouse} /></div>
+                    <span className='ps-4 text-light'>Home</span>
+                  </div>
+                </div>
+              </Link> */}
 
             </div>
           </Col>

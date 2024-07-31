@@ -1,0 +1,22 @@
+.wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-color:#3384A5;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    
+}
+.wrapper .button:hover{
+    width: 200px;
+}
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 60px;
+}
