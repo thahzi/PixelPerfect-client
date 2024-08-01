@@ -1,6 +1,7 @@
 import React from 'react'
 import './Landing.css'
 import Header from '../header/Header'
+import { Link } from 'react-router-dom'
 
 
 function Landing() {
@@ -13,6 +14,7 @@ function Landing() {
                 <h1 className='text-light '>SHOWCASE <span >YOUR</span> </h1>
                 <h1 className='text-light ' >PHOTOGRAPHY </h1>
                 <h5 className='text-light pt-3'>upload your portfolio</h5>
+                <Link to={'/login'}><div className='btn btn-info rounded-5 ms-5 shadow'>Get Started</div></Link>
             </div>
     
     </>

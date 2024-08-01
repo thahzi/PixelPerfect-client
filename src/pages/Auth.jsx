@@ -1,29 +1,65 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, ToastContainer } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
-import { registerApi } from "../services/allApi";
-import { Link } from "react-router-dom";
+import { loginApi, registerApi } from "../services/allApi";
+import { Link, useNavigate } from "react-router-dom";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
+
 
 function Auth({ register }) {
+  const navigate= useNavigate()
+
   const [userDetails, setUserDetails] = useState({
     username: "",
     email: "",
-    password: "",
+    password: ""
   });
   console.log(userDetails);
 
+  //register
   const handleRegister = async () => {
     const { username, email, password } = userDetails;
 
     if (!username || !email || !password) {
-      alert("fill the form");
+      toast.info("fill the form");
     } else {
       const result = await registerApi(userDetails);
       console.log(result);
+      if(result.status==200){
+        toast.success("Registration Successfull");
+        navigate("/login");
+      }else{
+        toast.error("Registration Failed");
+      }
     }
-  };
+  }
+
+  //login
+  const handleLogin = async()=>{
+    const {email, password} =userDetails
+    if(!email || !password) {
+      toast.info("fill the form");
+    }
+    else{
+      const result = await loginApi({email, password});
+      console.log(result);
+    }
+    if(result.status==200){
+      toast.success("login success")
+      sessionStorage.setItem("token",result.date.token)
+      setUserDetails({
+        username: "",
+        email: "",
+        password: ""
+      })
+      navigate('/')
+    }
+    else{
+      toast.error(result.response.data);
+    }
+  }
   return (
     <>
       <div className="container mt-5">
@@ -59,7 +95,7 @@ function Auth({ register }) {
                   label="Password"
                   variant="standard"
                 />
-                <button>login</button>
+                <button onClick={handleLogin}>login</button>
                 <p>
                   Dont have a ccount? <Link to={"/register"}>Create Account..</Link>
                 </p>
@@ -121,6 +157,7 @@ function Auth({ register }) {
           </button>
         </form>
       )}
+      <ToastContainer position="top-center" theme="colored" autoClose={200}/>
     </>
   );
 }

@@ -8,9 +8,6 @@ import Gallery from './pages/Gallery/Gallery'
 import Auth from './pages/Auth'
 
 
-
-
-
 function App() {
   
 
@@ -18,6 +15,7 @@ function App() {
     <>
     
       <Routes>
+       
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Auth/>} />
         <Route path='/register' element={<Auth register/>} />
